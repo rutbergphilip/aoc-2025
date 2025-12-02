@@ -1,13 +1,12 @@
-import { solve } from './day1';
+import { solve } from './day2';
 import { readFile } from './utils';
 
 const main = () => {
   console.log('Advent of Code 2025');
 
-  // Day 1
-  const day1Input = readFile('day1');
-  const day1Result = solve(day1Input);
-  console.log('Day 1:', day1Result);
+  const input = readFile('day2');
+  const result = solve(input);
+  console.log('Result:', result);
 };
 
 main();
