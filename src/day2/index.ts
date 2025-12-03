@@ -3,7 +3,6 @@ import path from 'node:path';
 import { parseLines } from '../utils';
 
 function readInput(): string {
-  // Extract day folder name from __dirname (e.g., 'day2' from 'dist/day2' or 'src/day2')
   const dayFolder = path.basename(__dirname);
   const inputPath = path.join(process.cwd(), 'src', dayFolder, 'input.txt');
   return fs.readFileSync(inputPath, 'utf8');
