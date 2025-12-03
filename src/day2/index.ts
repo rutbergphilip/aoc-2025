@@ -1,4 +1,13 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { parseLines } from '../utils';
+
+function readInput(): string {
+  // Extract day folder name from __dirname (e.g., 'day2' from 'dist/day2' or 'src/day2')
+  const dayFolder = path.basename(__dirname);
+  const inputPath = path.join(process.cwd(), 'src', dayFolder, 'input.txt');
+  return fs.readFileSync(inputPath, 'utf8');
+}
 
 const isInvalidIdPart1 = (id: number) => {
   const stringified = id.toString();
@@ -31,7 +40,8 @@ const isInvalidIdPart2 = (id: number) => {
   return isInvalid;
 };
 
-export function solve(input: string): { part1: number; part2: number } {
+export function solve(): { part1: number; part2: number } {
+  const input = readInput();
   const lines = parseLines(input).join('');
   const ids = lines.split(',').map((id) => id.split('-').map(Number));
 
