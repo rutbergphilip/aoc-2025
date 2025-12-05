@@ -9,3 +9,11 @@ export function readFile(folderName: string): string {
 export function parseLines(input: string): string[] {
   return input.trim().split('\n');
 }
+
+export function parseDoubleInputLines(input: string): string[][] {
+  const lines = parseLines(input);
+  const pivot = lines.findIndex((val) => val === '');
+  const first = lines.splice(0, pivot);
+  lines.shift();
+  return [first, lines];
+}

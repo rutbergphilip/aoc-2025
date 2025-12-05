@@ -1,4 +1,4 @@
-import { solve } from './day4';
+import { solve } from './day5';
 
 const main = () => {
   console.log('Advent of Code 2025');
