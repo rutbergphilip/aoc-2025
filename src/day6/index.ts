@@ -41,7 +41,6 @@ export function solve(): { part1: number; part2: number } {
     return (sum += total);
   }, 0);
 
-  // Part 2 - Doesn't work, will fix later
   const rowsPart2 = parseLines(input).map((line) => line.split(''));
   const isNumber = (str: string) => /[0-9]+/g.test(str);
   const isOperator = (str: string) => str === '+' || str === '*';
